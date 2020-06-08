@@ -40,7 +40,6 @@ $ exit
 
 # docker 停止
 $ docker-compose stop
-
 ```
 
 ### Laravel のインストール
@@ -121,3 +120,13 @@ laravel_docker_template/
     - 開発ディレクトリと公開ディレクトリとのマウント
     - その他の設定ファイルも同様にマウント
   - ports: ここでもポートの設定
+
+## docker-compose 操作
+docker-compose.yml 上で db の environment 周りを変更した場合、再度 Docker のイメージを更新する必要がある
+```bash
+# docker のコンテナをストップする
+$ docker-compose down
+
+# docker のイメージを削除する
+$ docker-compose down --rmi all
+```
